@@ -26,36 +26,30 @@ function copyTextToClipboard(text) {
 }
 
 window.addEventListener('keydown', (e) => {
-  // 新しいチャット
-  if (e.ctrlKey && e.shiftKey && (e.key === 'N' || e.key === 'n')) {
-    window.location.pathname = '/';
-    e.preventDefault();
-    return;
-  }
   // 生成停止（送信ボタンをクリック）
-  if (e.ctrlKey && e.shiftKey && (e.key === 'S' || e.key === 's')) {
+  if (e.shiftKey && e.metaKey && (e.key === 'U' || e.key === 'u')) {
     clickElement('#composer-submit-button');
     e.preventDefault();
     return;
   }
   // 最後のメッセージを編集
-  if (e.ctrlKey && e.shiftKey && (e.key === 'E' || e.key === 'e')) {
+  if (e.shiftKey && e.metaKey && (e.key === 'M' || e.key === 'm')) {
     clickLastElement('[aria-label="メッセージを編集する"]');
     e.preventDefault();
     return;
   }
 
-  if (e.ctrlKey && e.shiftKey && e.key === '0') {
+  if (e.shiftKey && e.metaKey && e.key === '0') {
     location.search = `?model=o3`;
     e.preventDefault();
     return;
   }
-  if (e.ctrlKey && e.shiftKey && e.key === '9') {
+  if (e.shiftKey && e.metaKey && e.key === '9') {
     location.search = `?model=o4-mini-high`;
     e.preventDefault();
     return;
   }
-  if (e.ctrlKey && e.shiftKey && e.key === '8') {
+  if (e.shiftKey && e.metaKey && e.key === '8') {
     location.search = `?model=gpt-4o`;
     e.preventDefault();
     return;
