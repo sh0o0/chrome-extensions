@@ -25,6 +25,13 @@ function copyTextToClipboard(text) {
   document.querySelector('textarea').focus();
 }
 
+const keyAndModels = {
+  '0': 'o3',
+  '9': 'o4-mini',
+  '8': 'gpt-4o',
+  '7': 'o4-mini-high',
+};
+
 window.addEventListener('keydown', (e) => {
   // 生成停止（送信ボタンをクリック）
   if (e.shiftKey && e.metaKey && (e.key === 'U' || e.key === 'u')) {
@@ -39,18 +46,8 @@ window.addEventListener('keydown', (e) => {
     return;
   }
 
-  if (e.shiftKey && e.metaKey && e.key === '0') {
-    location.search = `?model=o3`;
-    e.preventDefault();
-    return;
-  }
-  if (e.shiftKey && e.metaKey && e.key === '9') {
-    location.search = `?model=o4-mini-high`;
-    e.preventDefault();
-    return;
-  }
-  if (e.shiftKey && e.metaKey && e.key === '8') {
-    location.search = `?model=gpt-4o`;
+  if (e.shiftKey && e.metaKey && keyAndModels.hasOwnProperty(e.key)) {
+    location.search = `?model=${keyAndModels[e.key]}`;
     e.preventDefault();
     return;
   }
