@@ -16,32 +16,26 @@ function clickLastElement(selector) {
 }
 
 function copyTextToClipboard(text) {
-  const el = document.createElement('textarea');
+  const el = document.createElement("textarea");
   el.value = text;
   document.body.appendChild(el);
   el.select();
-  document.execCommand('copy');
+  document.execCommand("copy");
   document.body.removeChild(el);
-  document.querySelector('textarea').focus();
+  document.querySelector("textarea").focus();
 }
 
 const keyAndModels = {
-  '0': 'o3',
-  '9': 'o4-mini',
-  '8': 'gpt-4o',
-  '7': 'o4-mini-high',
+  0: "o3",
+  9: "o4-mini",
+  8: "gpt-4o",
+  7: "o4-mini-high",
 };
 
-window.addEventListener('keydown', (e) => {
+window.addEventListener("keydown", (e) => {
   // 生成停止（送信ボタンをクリック）
-  if (e.shiftKey && e.metaKey && (e.key === 'U' || e.key === 'u')) {
-    clickElement('#composer-submit-button');
-    e.preventDefault();
-    return;
-  }
-  // 最後のメッセージを編集
-  if (e.shiftKey && e.metaKey && (e.key === 'M' || e.key === 'm')) {
-    clickLastElement('[aria-label="メッセージを編集する"]');
+  if (e.metaKey && e.key === "Escape") {
+    clickElement("#composer-submit-button");
     e.preventDefault();
     return;
   }
