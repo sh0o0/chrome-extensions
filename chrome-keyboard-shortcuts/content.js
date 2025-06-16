@@ -13,7 +13,7 @@ async function copyPageLinkAsRichText() {
     const htmlData = `<a href="${url}">${title}</a>`;
 
     // Create plain text fallback
-    const textData = `${title} - ${url}`;
+    const textData = `[${title}](${url})`;
 
     // Use the modern Clipboard API with rich text support
     const clipboardItem = new ClipboardItem({
