@@ -15,7 +15,7 @@
     "copy-page-link": {
       "suggested_key": {
         "default": "Shift+Ctrl+L",
-        "mac": "Shift+Cmd+L"
+        "mac": "Shift+MacCtrl+L"
       },
       "description": "Copy page title and URL as rich text"
     }
