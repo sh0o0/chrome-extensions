@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Keyboard Shortcuts",
+  "version": "1.0",
+  "description": "Copy page title and URL as rich text with Shift+Cmd+L",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "commands": {
+    "copy-page-link": {
+      "suggested_key": {
+        "default": "Shift+Ctrl+L",
+        "mac": "Shift+Cmd+L"
+      },
+      "description": "Copy page title and URL as rich text"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
