@@ -3,11 +3,6 @@
   "name": "Chrome Keyboard Shortcuts",
   "version": "1.0",
   "description": "Copy page title and URL as rich text with Shift+Cmd+L",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
   "permissions": [
     "activeTab"
   ],
