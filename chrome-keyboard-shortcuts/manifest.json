@@ -6,6 +6,10 @@
   "permissions": [
     "activeTab"
   ],
+  "action": {
+    "default_title": "Copy page title and URL as rich text",
+    "default_popup": ""
+  },
   "commands": {
     "copy-page-link": {
       "suggested_key": {
