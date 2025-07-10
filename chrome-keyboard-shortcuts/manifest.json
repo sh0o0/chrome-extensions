@@ -2,9 +2,10 @@
   "manifest_version": 3,
   "name": "Chrome Keyboard Shortcuts",
   "version": "1.0",
-  "description": "Copy page title and URL as rich text with Shift+Cmd+L",
+  "description": "Copy all tab URLs in current window or copy page title and URL as rich text with Shift+Cmd+L",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
   "action": {
     "default_title": "Copy page title and URL as rich text",

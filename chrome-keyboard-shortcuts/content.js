@@ -1,6 +1,8 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "copyPageLink") {
     copyPageLinkAsRichText();
+  } else if (request.action === "copyAllTabUrls") {
+    copyAllTabUrlsToClipboard(request.urls);
   }
 });
 
@@ -36,6 +38,16 @@ async function copyPageLinkAsRichText() {
       console.error("Failed to copy even plain text:", fallbackError);
       showNotification("Failed to copy page link", "error");
     }
+  }
+}
+
+async function copyAllTabUrlsToClipboard(urls) {
+  try {
+    await navigator.clipboard.writeText(urls);
+    showNotification("All tab URLs copied to clipboard!");
+  } catch (error) {
+    console.error("Failed to copy URLs:", error);
+    showNotification("Failed to copy URLs", "error");
   }
 }
 
